@@ -2,14 +2,16 @@ defmodule MobileDoc.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :mobiledoc,
-     version: "0.0.2",
-     elixir: "~> 1.0",
-     description: description,
-     package: package,
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
-     deps: deps]
+    [
+      app: :mobiledoc,
+      version: "0.0.3",
+      elixir: "~> 1.0",
+      description: description,
+      package: package,
+      build_embedded: Mix.env() == :prod,
+      start_permanent: Mix.env() == :prod,
+      deps: deps
+    ]
   end
 
   # Configuration for the OTP application
@@ -39,9 +41,11 @@ defmodule MobileDoc.Mixfile do
   end
 
   defp package do
-    [files: ["lib", "priv", "mix.exs", "README*", "readme*", "LICENSE*", "license*"],
-     contributors: ["Gabor Babicz"],
-     licenses: ["MIT"],
-     links: %{"GitHub" => "https://github.com/zeppelin/mobiledoc-renderer-elixir"}]
+    [
+      files: ["lib", "priv", "mix.exs", "README*", "readme*", "LICENSE*", "license*"],
+      contributors: ["Gabor Babicz"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/zeppelin/mobiledoc-renderer-elixir"}
+    ]
   end
 end
